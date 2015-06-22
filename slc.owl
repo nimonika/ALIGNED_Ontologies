@@ -73,16 +73,19 @@ DataProperty: <http://www.aligned.eu/ontologies/slc#processTitle>
 DataProperty: <http://www.aligned.eu/ontologies/slc#processPurpose>
 
     
-Class: <http://www.aligned.eu/ontologies/slc#Acquisition>
+Class: <http://www.aligned.eu/ontologies/slc#Project>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#Measurement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Agreement>
+        <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityTesting>
+Class: <http://www.aligned.eu/ontologies/slc#SystemQualificationTestingProcess>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#InfrastructureManagement>
@@ -91,112 +94,20 @@ Class: <http://www.aligned.eu/ontologies/slc#InfrastructureManagement>
         <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#LifecycleModelManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemIntegration>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.w3.org/ns/prov#Organization>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#Output>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#System>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#Task>
+Class: <http://www.aligned.eu/ontologies/slc#AgreementProcess>
 
     Annotations: 
-        dc:description "equirement, recommendation, or permissible action, intended to contribute to the achievement of one or more outcomes of a process"
+        rdfs:label "Agrreement process"
     
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#Party>
-
-    Annotations: 
-        dc:description "An organization entering into an agreement"
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Organisation>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemQualityTesting>
-
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#AcceptanceSupport>
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareValidation>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#ProjectSupport>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
-
-    SubClassOf: 
-        <http://www.w3.org/ns/prov#Activity>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitectureDesign>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleProcess>
-
-    SubClassOf: 
-        <http://www.w3.org/ns/prov#Activity>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareIntegration>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemArchitecture>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#HumanResourceManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
+        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>,
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareDocumentationManagement>
@@ -208,55 +119,16 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareDocumentationManagement>
         <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareComponent>
+Class: <http://www.aligned.eu/ontologies/slc#Supplier>
 
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Software>
+    Annotations: 
+        rdfs:label "Supplier"
     
     
-Class: <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Input>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#DomainEngineering>
+Class: <http://www.aligned.eu/ontologies/slc#ReuseProgrammeManagementProcess>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Project>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitecture>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#InformationManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Operation>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Action>
@@ -265,34 +137,16 @@ Class: <http://www.aligned.eu/ontologies/slc#Action>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Installation>
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareConfigurationManagement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Software>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirements>
+Class: <http://www.aligned.eu/ontologies/slc#SystemArchitectureDesign>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Service>
-
-    Annotations: 
-        dc:description "Performance of activities,work,or duties associated with a product"
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#ProcessView>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#ProjectAssessmentAndControl>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
@@ -301,38 +155,68 @@ Class: <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
         rdfs:comment "It is fundamental to 12207 that software exists only in the context of a system  even if the system consists of only the processor upon which the software is executed. Therefore, a software product or service is always treated as one item in a system."
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemLifecycleProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareReview>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-
-    SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#ReuseAssetManagement>
+Class: <http://www.aligned.eu/ontologies/slc#ProcessView>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareInstallationProcess>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+Class: <http://www.aligned.eu/ontologies/slc#Supply>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
+        <http://www.aligned.eu/ontologies/slc#AgreementProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareRequirementsAnalysis>
+Class: <http://www.w3.org/ns/prov#Organization>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareItem>
+
+    Annotations: 
+        dc:description "source code, object code, control code, control data, or a collection of these items"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Software>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Outcome>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+        <http://www.aligned.eu/ontologies/slc#Output>
     
+    
+Class: <http://www.aligned.eu/ontologies/slc#ProjectPlanning>
+
+    Annotations: 
+        rdfs:label "Project planning"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectManagementProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#ProjectPortfolioManagement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#ProjectAssessmentAndControl>
+
+    Annotations: 
+        rdfs:label "Project assessment and control"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectManagementProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Software>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#QualityManagement>
 
@@ -340,106 +224,43 @@ Class: <http://www.aligned.eu/ontologies/slc#QualityManagement>
         <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Recommendation>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Disposal>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Product>
-
-    Annotations: 
-        dc:description "The result of a process [ISO9000]"
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityAssurance>
-
-    Annotations: 
-        rdfs:comment "ISO/IEC/IEEE15026"
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Requirement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#ReuseProgrammeManagement>
+Class: <http://www.aligned.eu/ontologies/slc#ReuseAssetManagementProcess>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#ConfigurationManagement>
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareDisposalProcess>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectSupport>
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Maintenance>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareConfigurationManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#DecisionManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Organisation>
+Class: <http://www.aligned.eu/ontologies/slc#ProjectManagementProcess>
 
     Annotations: 
-        dc:description "An endeavour with defined start and finish dates undertaken to create a product or service in accordance with specified resources and requirements [adapted from ISO 9000]"
+        rdfs:label "Project management process"
     
-    SubClassOf: 
-        <http://www.w3.org/ns/prov#Organization>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareDetailedDesign>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Supply>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Agreement>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#ProjectPlanning>
-
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareVerification>
+Class: <http://www.aligned.eu/ontologies/slc#InformationManagement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+        <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
+
+    Annotations: 
+        rdfs:label "Organisational project enabling process"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareUnit>
@@ -451,6 +272,288 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareUnit>
         <http://www.aligned.eu/ontologies/slc#Software>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#Output>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#Task>
+
+    Annotations: 
+        dc:description "equirement, recommendation, or permissible action, intended to contribute to the achievement of one or more outcomes of a process"
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityAssurance>
+
+    Annotations: 
+        rdfs:comment "ISO/IEC/IEEE15026"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Service>
+
+    Annotations: 
+        dc:description "Performance of activities,work,or duties associated with a product"
+    
+    
+Class: <http://www.w3.org/ns/prov#Activity>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitecture>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualificationTestingProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirementsDefinition>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareReview>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
+
+    SubClassOf: 
+        <http://www.w3.org/ns/prov#Activity>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#HumanResourceManagement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#ConfigurationManagement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Requirement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Task>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#DomainEngineeringProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareConstruction>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemRequirementsAnalysis>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Acquisition>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#AgreementProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemIntegrationProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Party>
+
+    Annotations: 
+        dc:description "An organization entering into an agreement"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Organisation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareValidation>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareAuditProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareMaintenanceProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#RiskManagement>
+
+    Annotations: 
+        rdfs:comment "ISO/IEC/IEEE16085"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Product>
+
+    Annotations: 
+        dc:description "The result of a process [ISO9000]"
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#LifecycleModelManagement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareRequirementsAnalysis>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#System>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#Input>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#Organisation>
+
+    Annotations: 
+        dc:description "An endeavour with defined start and finish dates undertaken to create a product or service in accordance with specified resources and requirements [adapted from ISO 9000]"
+    
+    SubClassOf: 
+        <http://www.w3.org/ns/prov#Organization>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
+
+    Annotations: 
+        rdfs:label "Software Development"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareVerification>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareIntegration>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#Recommendation>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Task>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareComponent>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Software>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+
+    Annotations: 
+        rdfs:label "Technical process"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareAcceptanceSupportProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#ImplementationProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareOperationProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitectureDesign>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareDetailedDesign>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
+
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+
+    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareMaintenance>
 
     Annotations: 
@@ -460,77 +563,11 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareMaintenance>
         <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#RiskManagement>
-
-    Annotations: 
-        rdfs:comment "ISO/IEC/IEEE16085"
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Measurement>
+Class: <http://www.aligned.eu/ontologies/slc#DecisionManagement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectSupport>
+        <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
     
-    
-Class: <http://www.aligned.eu/ontologies/slc#ProjectPortfolioManagement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Supplier>
-
-    Annotations: 
-        rdfs:label "Supplier"
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareItem>
-
-    Annotations: 
-        dc:description "source code, object code, control code, control data, or a collection of these items"
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Software>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirementsAnalysis>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareAudit>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Outcome>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Output>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareConstruction>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Agreement>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.w3.org/ns/prov#Activity>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
-
     
 Individual: <http://www.aligned.eu/ontologies/slc#Maintenance>
 
