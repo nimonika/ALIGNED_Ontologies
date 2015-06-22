@@ -82,13 +82,13 @@ DataProperty: <http://www.aligned.eu/ontologies/slc#processPurpose>
 Class: <http://www.aligned.eu/ontologies/slc#Decision_tracking>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Opportunity_identification>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#InfrastructureManagement>
@@ -123,7 +123,7 @@ This process provides life cycle policies, processes, and procedures that are co
 Class: <http://www.aligned.eu/ontologies/slc#Quality_management>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.w3.org/ns/prov#Organization>
@@ -132,7 +132,7 @@ Class: <http://www.w3.org/ns/prov#Organization>
 Class: <http://www.aligned.eu/ontologies/slc#Process_improvement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#RiskManagementProcess>
@@ -154,7 +154,7 @@ Class: <http://www.aligned.eu/ontologies/slc#System>
 Class: <http://www.aligned.eu/ontologies/slc#Risk_treatment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirementsDefinition>
@@ -166,7 +166,7 @@ Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirementsDefinition>
 Class: <http://www.aligned.eu/ontologies/slc#Process_assessment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
@@ -178,13 +178,13 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareSpecificProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Process_implementation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Supplier_tendering>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SystemIntegrationProcess>
@@ -208,6 +208,9 @@ Class: <http://www.aligned.eu/ontologies/slc#Task>
     Annotations: 
         dc:description "equirement, recommendation, or permissible action, intended to contribute to the achievement of one or more outcomes of a process"
     
+    SubClassOf: 
+        <http://www.w3.org/ns/prov#Activity>
+    
     
 Class: <http://www.aligned.eu/ontologies/slc#ReuseProgrammeManagementProcess>
 
@@ -224,10 +227,16 @@ Class: <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
 
     
+Class: <http://www.aligned.eu/ontologies/slc#TailoredProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#Contract_execution>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Organisation>
@@ -254,31 +263,32 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareValidation>
 Class: <http://www.aligned.eu/ontologies/slc#Project_assessment.>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Project_initiation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Acquisition_preparation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
 
     SubClassOf: 
-        <http://www.w3.org/ns/prov#Activity>
+        (<http://www.aligned.eu/ontologies/slc#processActivity> some <http://www.w3.org/ns/prov#Activity>)
+         and (<http://www.aligned.eu/ontologies/slc#processOutput> some <http://www.aligned.eu/ontologies/slc#Output>)
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Closure>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitectureDesign>
@@ -320,7 +330,7 @@ Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
 Class: <http://www.aligned.eu/ontologies/slc#Project_control>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#HumanResourceManagement>
@@ -410,13 +420,13 @@ Class: <http://www.aligned.eu/ontologies/slc#InformationManagement>
 Class: <http://www.aligned.eu/ontologies/slc#Project_planning>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Decision_analysis>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Output>
@@ -440,25 +450,25 @@ Class: <http://www.aligned.eu/ontologies/slc#Software>
 Class: <http://www.aligned.eu/ontologies/slc#Contract_agreement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Acquisition_advertisement>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Skill_development>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Skill_acquisition_and_provision>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#ProjectPlanningProcess>
@@ -485,7 +495,7 @@ Class: <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Risk_profile_management>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#ProcessView>
@@ -527,7 +537,7 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareReview>
 Class: <http://www.aligned.eu/ontologies/slc#Acquirer_acceptance>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SupplyProcess>
@@ -561,13 +571,13 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareDisposalProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Project_activation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Supplier_selection>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
@@ -586,12 +596,6 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareRequirementsAnalysis>
 Class: <http://www.aligned.eu/ontologies/slc#Project_monitoring>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Recommendation>
-
-    SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
@@ -604,7 +608,7 @@ Class: <http://www.aligned.eu/ontologies/slc#Product>
 Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_establishment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityAssurance>
@@ -625,10 +629,10 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareAuditProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Risk_monitoring>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Requirement>
+Class: <http://www.aligned.eu/ontologies/slc#Configuration_management_execution>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
@@ -637,13 +641,13 @@ Class: <http://www.aligned.eu/ontologies/slc#Requirement>
 Class: <http://www.aligned.eu/ontologies/slc#Project_closure>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Risk_management_process_evaluation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
@@ -652,10 +656,16 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
         <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#Configuration_management_planning>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Task>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#Skill_identification>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareAcceptanceSupportProcess>
@@ -673,7 +683,7 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareConfigurationManagement>
 Class: <http://www.aligned.eu/ontologies/slc#Quality_management_corrective_action>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#DecisionManagement>
@@ -700,12 +710,6 @@ Class: <http://www.aligned.eu/ontologies/slc#Supplier>
         rdfs:label "Supplier"
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Action>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareInstallationProcess>
 
     SubClassOf: 
@@ -721,7 +725,7 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareDetailedDesign>
 Class: <http://www.aligned.eu/ontologies/slc#Process_establishment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareVerification>
@@ -757,13 +761,13 @@ Class: <http://www.aligned.eu/ontologies/slc#Measurement>
 Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_maintenance>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Agreement_monitoring>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#ProjectPortfolioManagement>
@@ -790,7 +794,7 @@ Class: <http://www.aligned.eu/ontologies/slc#QualityManagementProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Decision_planning>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualificationTestingProcess>
@@ -823,7 +827,7 @@ Class: <http://www.aligned.eu/ontologies/slc#Outcome>
 Class: <http://www.aligned.eu/ontologies/slc#Knowledge_management>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareConstruction>
@@ -835,7 +839,7 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareConstruction>
 Class: <http://www.aligned.eu/ontologies/slc#Risk_management_planning>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Input>
@@ -844,7 +848,7 @@ Class: <http://www.aligned.eu/ontologies/slc#Input>
 Class: <http://www.aligned.eu/ontologies/slc#Risk_analysis>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.w3.org/ns/prov#Activity>
@@ -863,7 +867,7 @@ Class: <http://www.aligned.eu/ontologies/slc#AcquisitionProcess>
 Class: <http://www.aligned.eu/ontologies/slc#Portfolio_evaluation>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Action>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Production>
