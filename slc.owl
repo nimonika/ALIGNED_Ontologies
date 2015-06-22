@@ -114,6 +114,9 @@ Class: <http://www.aligned.eu/ontologies/slc#System>
     
 Class: <http://www.aligned.eu/ontologies/slc#Task>
 
+    Annotations: 
+        dc:description "equirement, recommendation, or permissible action, intended to contribute to the achievement of one or more outcomes of a process"
+    
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
 
@@ -186,6 +189,9 @@ Class: <http://www.aligned.eu/ontologies/slc#SystemArchitecture>
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#HumanResourceManagement>
 
@@ -292,7 +298,7 @@ Class: <http://www.aligned.eu/ontologies/slc#ProjectAssessmentAndControl>
 Class: <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
 
     Annotations: 
-        rdfs:comment "It is fundamental to 12207 that software exists only in the context of a system."
+        rdfs:comment "It is fundamental to 12207 that software exists only in the context of a system  even if the system consists of only the processor upon which the software is executed. Therefore, a software product or service is always treated as one item in a system."
     
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SystemLifecycleProcess>
@@ -438,6 +444,9 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareVerification>
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareUnit>
 
+    Annotations: 
+        dc:description "separately compilable piece of code"
+    
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Software>
     
@@ -472,8 +481,17 @@ Class: <http://www.aligned.eu/ontologies/slc#ProjectPortfolioManagement>
         <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#Supplier>
+
+    Annotations: 
+        rdfs:label "Supplier"
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareItem>
 
+    Annotations: 
+        dc:description "source code, object code, control code, control data, or a collection of these items"
+    
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Software>
     
@@ -511,37 +529,77 @@ Class: <http://www.aligned.eu/ontologies/slc#Agreement>
 Class: <http://www.w3.org/ns/prov#Activity>
 
     
-Individual: <http://www.aligned.eu/ontologies/slc#Development>
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
+
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Maintenance>
 
     Types: 
         <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Spiral>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Development>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>,
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Evolutionary>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Retirement>
 
     Types: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Incremental>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Support>
 
     Types: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Waterfall>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Conceptualisation>
 
     Types: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Utilisation>
 
     Types: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Production>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#Operation>
 
     Types: 
         <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleStage>
