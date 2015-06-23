@@ -10,19 +10,22 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Ontology: <http://www.aligned.eu/ontologies/slc>
 
 Import: <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl>
+Import: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl>
 Import: <http://www.w3.org/ns/prov-o-20130430>
 
 Annotations: 
     dc:creator "Monika Solanki",
-    dc:description "This ontology provides a higl level definition of the conceptual elements that govern the Software development lifecycle. The ontology complies with the terminology defined in ISO/IEC 15288:2008, ISO/IEC 12207:2008 and ISO/IEC/IEEE 24765. 
+    dc:description "This ontology provides a higl level definition of the conceptual elements that govern the Software product lifecycle. The ontology complies with the terminology defined in ISO/IEC 15288:2008, ISO/IEC 12207:2008 and ISO/IEC/IEEE 24765. 
 
 The purpose of ISO/IEC 12207:2008 is  to help select, structure and employ the elements of an established set of life cycle processes to provide software products and services. The standard provides 43 processes covering the life-cycle of any software product or system element.
 
 ISO/IEC 15288:2008 gives names to processes in the life cycle of a system.
 ISO/IEC 12207:2008 gives names to processes in the life cycle of a software product or service. The two standards are designed to be used together for software-intensive systems.
-ISO/IEC/IEEE 24765 defines a Systems and Software Engineering Vocabulary.",
+ISO/IEC/IEEE 24765 defines a Systems and Software Engineering Vocabulary.
+
+The ontology aims to answer the following competetncy questions",
     dc:date "20-06-2015",
-    rdfs:label "Software Lifecycle (SLC) Ontology",
+    rdfs:label "Software LifeCycle (SLC) Ontology",
     owl:versionInfo 1.0
 
 AnnotationProperty: dc:description
@@ -52,25 +55,28 @@ AnnotationProperty: dc:creator
 Datatype: rdf:PlainLiteral
 
     
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#processOutcome>
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#referencesLifeCycleModel>
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessActivity>
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessOutcome>
 
     SubPropertyOf: 
-        <http://www.aligned.eu/ontologies/slc#processOutput>
+        <http://www.aligned.eu/ontologies/slc#hasProcessOutput>
     
     
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#processOutput>
-
-    
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#processTask>
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessTask>
 
     SubPropertyOf: 
         owl:topObjectProperty
     
     
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#processActivity>
+ObjectProperty: owl:topObjectProperty
 
     
-ObjectProperty: owl:topObjectProperty
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessOutput>
 
     
 DataProperty: <http://www.aligned.eu/ontologies/slc#processTitle>
@@ -193,6 +199,9 @@ Class: <http://www.aligned.eu/ontologies/slc#SystemIntegrationProcess>
         <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#ProcessReferenceModel>
+
+    
 Class: <http://www.aligned.eu/ontologies/slc#ConfigurationManagementProcess>
 
     Annotations: 
@@ -281,8 +290,9 @@ Class: <http://www.aligned.eu/ontologies/slc#Acquisition_preparation>
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
 
     SubClassOf: 
-        (<http://www.aligned.eu/ontologies/slc#processActivity> some <http://www.w3.org/ns/prov#Activity>)
-         and (<http://www.aligned.eu/ontologies/slc#processOutput> some <http://www.aligned.eu/ontologies/slc#Output>)
+        (<http://www.aligned.eu/ontologies/slc#hasProcessActivity> some <http://www.w3.org/ns/prov#Activity>)
+         and (<http://www.aligned.eu/ontologies/slc#hasProcessOutput> some <http://www.aligned.eu/ontologies/slc#Output>),
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Closure>
@@ -302,6 +312,9 @@ Class: <http://www.aligned.eu/ontologies/slc#DomainEngineeringProcess>
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
     
+    
+Class: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareMaintenanceProcess>
 
@@ -443,6 +456,13 @@ Class: <http://www.aligned.eu/ontologies/slc#Party>
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
 
+    
+Class: <http://www.aligned.eu/ontologies/slc#Tool>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Resource>,
+        <http://www.w3.org/ns/prov#SoftwareAgent>
+    
     
 Class: <http://www.aligned.eu/ontologies/slc#Software>
 
@@ -620,6 +640,12 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityAssurance>
         <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
+Class: <http://www.w3.org/ns/prov#Agent>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Resource>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareAuditProcess>
 
     SubClassOf: 
@@ -649,6 +675,9 @@ Class: <http://www.aligned.eu/ontologies/slc#Risk_management_process_evaluation>
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
     
+    
+Class: <http://www.w3.org/ns/prov#SoftwareAgent>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
 
@@ -721,6 +750,9 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareDetailedDesign>
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
     
+    
+Class: <http://www.aligned.eu/ontologies/slc#Resource>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#Process_establishment>
 
@@ -905,6 +937,12 @@ Individual: <http://www.aligned.eu/ontologies/slc#Conceptualisation>
 
     Types: 
         <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/slc#V-Model>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleModel>
     
     
 Individual: <http://www.aligned.eu/ontologies/slc#Support>
