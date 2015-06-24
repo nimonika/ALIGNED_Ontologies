@@ -58,8 +58,11 @@ Datatype: rdf:PlainLiteral
 ObjectProperty: <http://www.aligned.eu/ontologies/slc#referencesLifeCycleModel>
 
     
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessActivity>
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessTask>
 
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
     
 ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessOutcome>
 
@@ -67,11 +70,8 @@ ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessOutcome>
         <http://www.aligned.eu/ontologies/slc#hasProcessOutput>
     
     
-ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessTask>
+ObjectProperty: <http://www.aligned.eu/ontologies/slc#hasProcessActivity>
 
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
     
 ObjectProperty: owl:topObjectProperty
 
@@ -157,10 +157,14 @@ The Risk Management Process is a continuous process for systematically addressin
 Class: <http://www.aligned.eu/ontologies/slc#System>
 
     
-Class: <http://www.aligned.eu/ontologies/slc#Risk_treatment>
+Class: <http://www.aligned.eu/ontologies/slc#QualityManagementProcess>
 
+    Annotations: 
+        rdfs:label "Quality Management Process",
+        <http://www.aligned.eu/ontologies/slc#purpose> "The purpose of the Quality Management Process is to assure that products, services and implementations of life cycle processes meet organizational quality objectives and achieve customer satisfaction."
+    
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
+        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#StakeholderRequirementsDefinition>
@@ -187,7 +191,7 @@ Class: <http://www.aligned.eu/ontologies/slc#Process_implementation>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Supplier_tendering>
+Class: <http://www.aligned.eu/ontologies/slc#Project_control>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
@@ -269,12 +273,6 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareValidation>
         <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Project_assessment.>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
 Class: <http://www.aligned.eu/ontologies/slc#Project_initiation>
 
     SubClassOf: 
@@ -287,12 +285,10 @@ Class: <http://www.aligned.eu/ontologies/slc#Acquisition_preparation>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
+Class: <http://www.aligned.eu/ontologies/slc#ImplementationProcess>
 
     SubClassOf: 
-        (<http://www.aligned.eu/ontologies/slc#hasProcessActivity> some <http://www.w3.org/ns/prov#Activity>)
-         and (<http://www.aligned.eu/ontologies/slc#hasProcessOutput> some <http://www.aligned.eu/ontologies/slc#Output>),
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Closure>
@@ -307,10 +303,10 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitectureDesign>
         <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#DomainEngineeringProcess>
+Class: <http://www.aligned.eu/ontologies/slc#Project_closure>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>
@@ -328,23 +324,20 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareIntegration>
         <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#AgreementProcess>
-
-    Annotations: 
-        rdfs:label "Agrreement process"
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
-
-    
-Class: <http://www.aligned.eu/ontologies/slc#Project_control>
+Class: <http://www.aligned.eu/ontologies/slc#Project_planning>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
     
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemArchitectureDesign>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SystemLifecycleStage>
+
     
 Class: <http://www.aligned.eu/ontologies/slc#HumanResourceManagement>
 
@@ -358,13 +351,10 @@ The process assures the providing of a supply of skilled and experienced personn
         <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareDocumentationManagement>
+Class: <http://www.aligned.eu/ontologies/slc#Project_assessment.>
 
-    Annotations: 
-        rdfs:comment "ISO/IEC/IEEE15289"
-    
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareComponent>
@@ -403,16 +393,25 @@ This process provides life cycle policies, processes, and procedures that are co
         <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SystemArchitectureDesign>
+Class: <http://www.aligned.eu/ontologies/slc#Risk_treatment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitecture>
+Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_establishment>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
+        <http://www.aligned.eu/ontologies/slc#Task>
+    
+    
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareDocumentationManagement>
+
+    Annotations: 
+        rdfs:comment "ISO/IEC/IEEE15289"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
@@ -430,7 +429,7 @@ Class: <http://www.aligned.eu/ontologies/slc#InformationManagement>
         <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Project_planning>
+Class: <http://www.aligned.eu/ontologies/slc#Supplier_tendering>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
@@ -485,6 +484,12 @@ Class: <http://www.aligned.eu/ontologies/slc#Skill_development>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareConfigurationManagement>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#Skill_acquisition_and_provision>
 
     SubClassOf: 
@@ -494,10 +499,10 @@ Class: <http://www.aligned.eu/ontologies/slc#Skill_acquisition_and_provision>
 Class: <http://www.aligned.eu/ontologies/slc#ProjectPlanningProcess>
 
     Annotations: 
+        rdfs:label "Project planning process",
         <http://www.aligned.eu/ontologies/slc#purpose> "The purpose of the Project Planning Process is to produce and communicate effective and workable project plans.
 
-This process determines the scope of the project management and technical activities, identifies process outputs, project tasks and deliverables, establishes schedules for project task conduct, including achievement criteria, and required resources to accomplish project tasks.",
-        rdfs:label "Project planning process"
+This process determines the scope of the project management and technical activities, identifies process outputs, project tasks and deliverables, establishes schedules for project task conduct, including achievement criteria, and required resources to accomplish project tasks."
     
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#ProjectManagementProcess>
@@ -518,8 +523,11 @@ Class: <http://www.aligned.eu/ontologies/slc#Risk_profile_management>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#ProcessView>
+Class: <http://www.aligned.eu/ontologies/slc#Risk_management_planning>
 
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#Task>
+    
     
 Class: <http://www.aligned.eu/ontologies/slc#ProjectAssessmentAndControl>
 
@@ -607,6 +615,15 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
         <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#AgreementProcess>
+
+    Annotations: 
+        rdfs:label "Agrreement process"
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SystemContextProcess>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareRequirementsAnalysis>
 
     SubClassOf: 
@@ -619,16 +636,16 @@ Class: <http://www.aligned.eu/ontologies/slc#Project_monitoring>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareArchitecture>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareDevelopment>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#Product>
 
     Annotations: 
         dc:description "The result of a process [ISO9000]"
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_establishment>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualityAssurance>
@@ -658,16 +675,12 @@ Class: <http://www.aligned.eu/ontologies/slc#Risk_monitoring>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Configuration_management_execution>
+Class: <http://www.aligned.eu/ontologies/slc#SoftwareLifecycleProcess>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
-Class: <http://www.aligned.eu/ontologies/slc#Project_closure>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
+        (<http://www.aligned.eu/ontologies/slc#hasProcessActivity> some <http://www.w3.org/ns/prov#Activity>)
+         and (<http://www.aligned.eu/ontologies/slc#hasProcessOutput> some <http://www.aligned.eu/ontologies/slc#Output>),
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#Risk_management_process_evaluation>
@@ -676,7 +689,7 @@ Class: <http://www.aligned.eu/ontologies/slc#Risk_management_process_evaluation>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
-Class: <http://www.w3.org/ns/prov#SoftwareAgent>
+Class: <http://www.aligned.eu/ontologies/slc#Input>
 
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareProblemResolution>
@@ -703,11 +716,8 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareAcceptanceSupportProcess>
         <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#SoftwareConfigurationManagement>
+Class: <http://www.w3.org/ns/prov#SoftwareAgent>
 
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#SoftwareSupport>
-    
     
 Class: <http://www.aligned.eu/ontologies/slc#Quality_management_corrective_action>
 
@@ -760,6 +770,12 @@ Class: <http://www.aligned.eu/ontologies/slc#Process_establishment>
         <http://www.aligned.eu/ontologies/slc#Task>
     
     
+Class: <http://www.aligned.eu/ontologies/slc#DomainEngineeringProcess>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/slc#SoftwareReuse>
+    
+    
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareVerification>
 
     SubClassOf: 
@@ -790,12 +806,6 @@ Class: <http://www.aligned.eu/ontologies/slc#Measurement>
         <http://www.aligned.eu/ontologies/slc#ProjectSupportProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_maintenance>
-
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#Task>
-    
-    
 Class: <http://www.aligned.eu/ontologies/slc#Agreement_monitoring>
 
     SubClassOf: 
@@ -813,15 +823,8 @@ This process commits the investment of adequate organization funding and resourc
         <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#QualityManagementProcess>
+Class: <http://www.aligned.eu/ontologies/slc#ProcessView>
 
-    Annotations: 
-        rdfs:label "Quality Management Process",
-        <http://www.aligned.eu/ontologies/slc#purpose> "The purpose of the Quality Management Process is to assure that products, services and implementations of life cycle processes meet organizational quality objectives and achieve customer satisfaction."
-    
-    SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#ProjectEnablingProcess>
-    
     
 Class: <http://www.aligned.eu/ontologies/slc#Decision_planning>
 
@@ -835,10 +838,10 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareQualificationTestingProcess
         <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#ImplementationProcess>
+Class: <http://www.aligned.eu/ontologies/slc#Infrastructure_maintenance>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/slc#TechnicalProcess>
+        <http://www.aligned.eu/ontologies/slc#Task>
     
     
 Class: <http://www.aligned.eu/ontologies/slc#SoftwareItem>
@@ -868,14 +871,11 @@ Class: <http://www.aligned.eu/ontologies/slc#SoftwareConstruction>
         <http://www.aligned.eu/ontologies/slc#SoftwareImplementation>
     
     
-Class: <http://www.aligned.eu/ontologies/slc#Risk_management_planning>
+Class: <http://www.aligned.eu/ontologies/slc#Configuration_management_execution>
 
     SubClassOf: 
         <http://www.aligned.eu/ontologies/slc#Task>
     
-    
-Class: <http://www.aligned.eu/ontologies/slc#Input>
-
     
 Class: <http://www.aligned.eu/ontologies/slc#Risk_analysis>
 
