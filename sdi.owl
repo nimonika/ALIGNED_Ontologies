@@ -1,0 +1,413 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://www.aligned.eu/ontologies/sdi>
+
+Import: <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl>
+
+Annotations: 
+    <http://purl.org/dc/elements/1.1/description> "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact."
+
+AnnotationProperty: <http://purl.org/dc/elements/1.1/description>
+
+    
+Datatype: xsd:dateTime
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasConstraint>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Constraint>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#providesResolutionTo>
+
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#resolvedUsing>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasArgument>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Argument>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#resolvedUsing>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Argument>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Resolution>
+    
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#providesResolutionTo>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#fulfillsRequirement>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Software>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
+    
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#requirementFulfilledBy>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#providesSolutionTo>
+
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#hasMandatedSolution>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#intentAddresses>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#SoftwareDesignIntent>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#DesignGoal>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasJustification>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Justification>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasAlternativeSolution>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#AlternativeSolution>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#rationaleCapturedUsing>
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasEvidence>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Justification>,
+        <http://www.aligned.eu/ontologies/sdi#Argument>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Evidence>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#usesAsumption>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Assumption>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#refinedInto>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#addressedBy>
+
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#contradicts>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#leadsTo>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#MandatedSolution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#DesignDecision>
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#refines>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#governsDesign>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#DesignDecision>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#SoftwareDesign>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasStatus>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Status>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#requirementFulfilledBy>
+
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#fulfillsRequirement>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#usesHeuristic>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Heuristic>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasMandatedSolution>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#MandatedSolution>
+    
+    InverseOf: 
+        <http://www.aligned.eu/ontologies/sdi#providesSolutionTo>
+    
+    
+DataProperty: <http://www.aligned.eu/ontologies/sdi#version>
+
+    
+DataProperty: <http://www.aligned.eu/ontologies/sdi#description>
+
+    
+DataProperty: <http://www.aligned.eu/ontologies/sdi#createdOn>
+
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Status>
+
+    
+Class: <http://www.aligned.eu/ontologies/sdi#MandatedSolution>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesignRationale>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#SoftwareDesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Software>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#SoftwareDesign>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Constraint>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Argument>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#AlternativeSolution>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#Solution>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+
+    SubClassOf: 
+        (<http://www.aligned.eu/ontologies/sdi#createdOn> some xsd:dateTime)
+         and (<http://www.aligned.eu/ontologies/sdi#description> some xsd:string)
+         and (<http://www.aligned.eu/ontologies/sdi#version> some xsd:string)
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Solution>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Justification>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#EvidenceSupportingArtifact>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#Evidence>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#RationaleCaptureMethod>
+
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignObjective>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Assumption>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignGoal>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignProblem>,
+        <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesign>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#Software>
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Evidence>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignObjective>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Resolution>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignDecision>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignQuestion>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignProblem>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignGoal>
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesignIntent>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#SoftwareDesignRationale>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Heuristic>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignIssue>
+
+    EquivalentTo: 
+        <http://www.aligned.eu/ontologies/sdi#DesignGoal>,
+        <http://www.aligned.eu/ontologies/sdi#DesignQuestion>
+    
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/sdi#Resolved>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/sdi#Status>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/sdi#OnHold>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/sdi#Status>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/sdi#Terminated>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/sdi#Status>
+    
+    
+Individual: <http://www.aligned.eu/ontologies/sdi#Active>
+
+    Types: 
+        <http://www.aligned.eu/ontologies/sdi#Status>
+    
+    
