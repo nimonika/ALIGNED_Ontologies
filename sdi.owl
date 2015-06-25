@@ -9,17 +9,42 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Ontology: <http://www.aligned.eu/ontologies/sdi>
 
 Import: <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl>
+Import: <http://www.w3.org/ns/prov-o-20130430>
 
 Annotations: 
-    <http://purl.org/dc/elements/1.1/description> "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact."
+    <http://purl.org/dc/elements/1.1/title> "The Software Design Intent Ontology",
+    <http://purl.org/dc/elements/1.1/title> "",
+    <http://purl.org/dc/elements/1.1/date> "25-06-2015",
+    <http://purl.org/dc/elements/1.1/creator> "Monika Solanki (monika.solanki"@cs.ox.ac.uk),
+    <http://purl.org/dc/elements/1.1/description> "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact.",
+    <http://purl.org/dc/elements/1.1/language> "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact.",
+    owl:versionInfo 1.0
 
 AnnotationProperty: <http://purl.org/dc/elements/1.1/description>
+
+    
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/date>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/creator>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/language>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/title>
 
     
 Datatype: xsd:dateTime
 
     
 Datatype: xsd:string
+
+    
+Datatype: rdf:PlainLiteral
 
     
 ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasConstraint>
@@ -44,6 +69,16 @@ ObjectProperty: <http://www.aligned.eu/ontologies/sdi#hasArgument>
     
     Range: 
         <http://www.aligned.eu/ontologies/sdi#Argument>
+    
+    
+ObjectProperty: <http://www.w3.org/ns/prov#wasAttributedTo>
+
+    Domain: 
+        <http://www.aligned.eu/ontologies/sdi#Evidence>,
+        <http://www.aligned.eu/ontologies/sdi#Heuristic>,
+        <http://www.aligned.eu/ontologies/sdi#Argument>,
+        <http://www.aligned.eu/ontologies/sdi#Assumption>,
+        <http://www.aligned.eu/ontologies/sdi#Justification>
     
     
 ObjectProperty: <http://www.aligned.eu/ontologies/sdi#resolvedUsing>
@@ -83,6 +118,15 @@ ObjectProperty: <http://www.aligned.eu/ontologies/sdi#intentAddresses>
     
     Range: 
         <http://www.aligned.eu/ontologies/sdi#DesignGoal>
+    
+    
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#supports>
+
+    Domain: 
+        <http://www.w3.org/ns/prov#Agent>
+    
+    Range: 
+        <http://www.aligned.eu/ontologies/sdi#Justification>
     
     
 ObjectProperty: owl:topObjectProperty
@@ -170,6 +214,9 @@ ObjectProperty: <http://www.aligned.eu/ontologies/sdi#refines>
         <http://www.aligned.eu/ontologies/sdi#Solution>
     
     
+ObjectProperty: <http://www.aligned.eu/ontologies/sdi#captureMethodology>
+
+    
 ObjectProperty: <http://www.aligned.eu/ontologies/sdi#governsDesign>
 
     Domain: 
@@ -248,13 +295,13 @@ Class: <http://www.aligned.eu/ontologies/sdi#Software>
 Class: <http://www.aligned.eu/ontologies/sdi#Constraint>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#Argument>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#AlternativeSolution>
@@ -263,24 +310,22 @@ Class: <http://www.aligned.eu/ontologies/sdi#AlternativeSolution>
         <http://www.aligned.eu/ontologies/sdi#Solution>
     
     
-Class: <http://www.aligned.eu/ontologies/sdi#DesignIntent>
-
-    SubClassOf: 
-        (<http://www.aligned.eu/ontologies/sdi#createdOn> some xsd:dateTime)
-         and (<http://www.aligned.eu/ontologies/sdi#description> some xsd:string)
-         and (<http://www.aligned.eu/ontologies/sdi#version> some xsd:string)
-    
-    
 Class: <http://www.aligned.eu/ontologies/sdi#Solution>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#Justification>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#Evaluation>
+
+    SubClassOf: 
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#EvidenceSupportingArtifact>
@@ -301,7 +346,7 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignRequirement>
 Class: <http://www.aligned.eu/ontologies/sdi#Assumption>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignGoal>
@@ -311,7 +356,19 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignGoal>
         <http://www.aligned.eu/ontologies/sdi#DesignIssue>
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
+    
+    
+Class: <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
+
+    Annotations: 
+        <http://purl.org/dc/elements/1.1/description> "The minimum ontological commitment required for this entity is the 
+a brief description of the artifact, the version info and the date."
+    
+    SubClassOf: 
+        (<http://www.aligned.eu/ontologies/sdi#createdOn> some xsd:dateTime)
+         and (<http://www.aligned.eu/ontologies/sdi#description> some xsd:string)
+         and (<http://www.aligned.eu/ontologies/sdi#version> some xsd:string)
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesign>
@@ -320,13 +377,13 @@ Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesign>
         <http://www.aligned.eu/ontologies/sdi#Software>
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#Evidence>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignObjective>
@@ -338,13 +395,13 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignObjective>
 Class: <http://www.aligned.eu/ontologies/sdi#Resolution>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignDecision>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignQuestion>
@@ -353,7 +410,7 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignQuestion>
         <http://www.aligned.eu/ontologies/sdi#DesignIssue>
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignProblem>
@@ -362,7 +419,7 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignProblem>
         <http://www.aligned.eu/ontologies/sdi#DesignGoal>
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesignIntent>
@@ -374,8 +431,11 @@ Class: <http://www.aligned.eu/ontologies/sdi#SoftwareDesignIntent>
 Class: <http://www.aligned.eu/ontologies/sdi#Heuristic>
 
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
+    
+Class: <http://www.w3.org/ns/prov#Agent>
+
     
 Class: <http://www.aligned.eu/ontologies/sdi#DesignIssue>
 
@@ -384,7 +444,7 @@ Class: <http://www.aligned.eu/ontologies/sdi#DesignIssue>
         <http://www.aligned.eu/ontologies/sdi#DesignQuestion>
     
     SubClassOf: 
-        <http://www.aligned.eu/ontologies/sdi#DesignIntent>
+        <http://www.aligned.eu/ontologies/sdi#DesignIntentArtifact>
     
     
 Individual: <http://www.aligned.eu/ontologies/sdi#Resolved>
