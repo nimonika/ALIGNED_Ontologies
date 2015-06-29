@@ -132,7 +132,8 @@ xsd:string rdf:type rdfs:Datatype .
 
 :fulfillsRequirement rdf:type owl:ObjectProperty ;
                      
-                     rdfs:domain :DesignIntentArtifact ;
+                     rdfs:domain :Design ,
+                                 :DesignIntentArtifact ;
                      
                      rdfs:range :DesignRequirement ;
                      
@@ -143,6 +144,8 @@ xsd:string rdf:type rdfs:Datatype .
 ###  http://www.aligned.eu/ontologies/dio#governsDesign
 
 :governsDesign rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Design ;
                
                rdfs:domain :DesignDecision .
 
@@ -413,6 +416,12 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 :Constraint rdf:type owl:Class ;
             
             rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Design
+
+:Design rdf:type owl:Class .
 
 
 
