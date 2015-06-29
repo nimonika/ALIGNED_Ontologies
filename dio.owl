@@ -1,0 +1,638 @@
+@prefix : <http://www.aligned.eu/ontologies/dio#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.aligned.eu/ontologies/dio> .
+
+<http://www.aligned.eu/ontologies/dio> rdf:type owl:Ontology ;
+                                       
+                                       owl:versionInfo 1.0 ;
+                                       
+                                       dc:date "25-06-2015" ;
+                                       
+                                       dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
+                                       
+                                       dc:title "The Design Intent Ontology" ;
+                                       
+                                       dc:language "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
+                                       
+                                       dc:title "" ;
+                                       
+                                       dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
+                                       
+                                       owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
+                                                   <http://www.w3.org/ns/prov-o-20130430> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/creator
+
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/date
+
+dc:date rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/description
+
+dc:description rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/language
+
+dc:language rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/title
+
+dc:title rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral
+
+rdf:PlainLiteral rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#dateTime
+
+xsd:dateTime rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#string
+
+xsd:string rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.aligned.eu/ontologies/dio#addressedBy
+
+:addressedBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#captureMethodology
+
+:captureMethodology rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#contradicts
+
+:contradicts rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :Solution ;
+             
+             rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#fulfillsRequirement
+
+:fulfillsRequirement rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :DesignIntentArtifact ;
+                     
+                     rdfs:range :DesignRequirement ;
+                     
+                     owl:inverseOf :requirementFulfilledBy .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#governsDesign
+
+:governsDesign rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :DesignDecision .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasAlternativeSolution
+
+:hasAlternativeSolution rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range :AlternativeSolution ;
+                        
+                        rdfs:domain :DesignIssue .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasArgument
+
+:hasArgument rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :Argument ;
+             
+             rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasConstraint
+
+:hasConstraint rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Constraint ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasEvidence
+
+:hasEvidence rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Argument ;
+             
+             rdfs:range :Evidence ;
+             
+             rdfs:domain :Justification .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasJustification
+
+:hasJustification rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Justification ;
+                  
+                  rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasMandatedSolution
+
+:hasMandatedSolution rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :DesignIssue ;
+                     
+                     rdfs:range :MandatedSolution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#hasStatus
+
+:hasStatus rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :DesignIssue ;
+           
+           rdfs:range :Status .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#intentAddresses
+
+:intentAddresses rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range :DesignGoal ;
+                 
+                 rdfs:domain :DesignIntent .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#leadsTo
+
+:leadsTo rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :DesignDecision ;
+         
+         rdfs:domain :MandatedSolution ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#providesResolutionTo
+
+:providesResolutionTo rdf:type owl:ObjectProperty ;
+                      
+                      owl:inverseOf :resolvedUsing .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#providesSolutionTo
+
+:providesSolutionTo rdf:type owl:ObjectProperty ;
+                    
+                    owl:inverseOf :hasMandatedSolution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#rationaleCapturedUsing
+
+:rationaleCapturedUsing rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#refinedInto
+
+:refinedInto rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :DesignRequirement ;
+             
+             rdfs:domain :DesignRequirement .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#refines
+
+:refines rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Solution ;
+         
+         rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#requirementFulfilledBy
+
+:requirementFulfilledBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#resolvedUsing
+
+:resolvedUsing rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Argument ;
+               
+               rdfs:range :Resolution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#supports
+
+:supports rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Justification ;
+          
+          rdfs:domain <http://www.w3.org/ns/prov#Agent> .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#usesAsumption
+
+:usesAsumption rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Assumption ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#usesHeuristic
+
+:usesHeuristic rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Heuristic ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+
+<http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:domain :Argument ,
+                                                        :Assumption ,
+                                                        :Evidence ,
+                                                        :Heuristic ,
+                                                        :Justification .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.aligned.eu/ontologies/dio#createdOn
+
+:createdOn rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#description
+
+:description rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#version
+
+:version rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.aligned.eu/ontologies/dio#AlternativeSolution
+
+:AlternativeSolution rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Argument
+
+:Argument rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Assumption
+
+:Assumption rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Constraint
+
+:Constraint rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignDecision
+
+:DesignDecision rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignGoal
+
+:DesignGoal rdf:type owl:Class ;
+            
+            owl:equivalentClass :DesignIssue ,
+                                :DesignProblem ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignIntent
+
+:DesignIntent rdf:type owl:Class ;
+              
+              owl:equivalentClass :DesignRationale .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignIntentArtifact
+
+:DesignIntentArtifact rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf [ rdf:type owl:Class ;
+                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :createdOn ;
+                                                               owl:someValuesFrom xsd:dateTime
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :description ;
+                                                               owl:someValuesFrom xsd:string
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :version ;
+                                                               owl:someValuesFrom xsd:string
+                                                             ]
+                                                           )
+                                      ] ;
+                      
+                      dc:description """The minimum ontological commitment required for this entity is the 
+a brief description of the artifact, the version info and the date.""" .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignIssue
+
+:DesignIssue rdf:type owl:Class ;
+             
+             owl:equivalentClass :DesignQuestion ;
+             
+             rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignObjective
+
+:DesignObjective rdf:type owl:Class ;
+                 
+                 owl:equivalentClass :DesignRequirement .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignProblem
+
+:DesignProblem rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignQuestion
+
+:DesignQuestion rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignRationale
+
+:DesignRationale rdf:type owl:Class .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#DesignRequirement
+
+:DesignRequirement rdf:type owl:Class .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Evaluation
+
+:Evaluation rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Evidence
+
+:Evidence rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#EvidenceSupportingArtifact
+
+:EvidenceSupportingArtifact rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :Evidence .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Heuristic
+
+:Heuristic rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Justification
+
+:Justification rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#MandatedSolution
+
+:MandatedSolution rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Solution .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#RationaleCaptureMethod
+
+:RationaleCaptureMethod rdf:type owl:Class .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Resolution
+
+:Resolution rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Solution
+
+:Solution rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Status
+
+:Status rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/ns/prov#Agent
+
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.aligned.eu/ontologies/dio#Active
+
+:Active rdf:type :Status ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#OnHold
+
+:OnHold rdf:type :Status ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Resolved
+
+:Resolved rdf:type :Status ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.aligned.eu/ontologies/dio#Terminated
+
+:Terminated rdf:type :Status ,
+                     owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
