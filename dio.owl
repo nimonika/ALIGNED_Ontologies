@@ -1,30 +1,30 @@
-@prefix : <http://www.aligned.eu/ontologies/dio#> .
+@prefix : <http://purl.org/dio/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.aligned.eu/ontologies/dio> .
+@base <http://purl.org/dio/> .
 
-<http://www.aligned.eu/ontologies/dio> rdf:type owl:Ontology ;
-                                       
-                                       owl:versionInfo 1.0 ;
-                                       
-                                       dc:date "25-06-2015" ;
-                                       
-                                       dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
-                                       
-                                       dc:title "The Design Intent Ontology" ;
-                                       
-                                       dc:language "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
-                                       
-                                       dc:title "" ;
-                                       
-                                       dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
-                                       
-                                       owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
-                                                   <http://www.w3.org/ns/prov-o-20130430> .
+<http://purl.org/dio/> rdf:type owl:Ontology ;
+                       
+                       owl:versionInfo 1.0 ;
+                       
+                       dc:date "25-06-2015" ;
+                       
+                       dc:title "The Design Intent Ontology" ;
+                       
+                       dc:language "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
+                       
+                       dc:title "" ;
+                       
+                       dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
+                       
+                       dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
+                       
+                       owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
+                                   <http://www.w3.org/ns/prov-o-20130430> .
 
 
 #################################################################
@@ -106,19 +106,19 @@ xsd:string rdf:type rdfs:Datatype .
 #################################################################
 
 
-###  http://www.aligned.eu/ontologies/dio#addressedBy
+###  http://purl.org/dio/addressedBy
 
 :addressedBy rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#captureMethodology
+###  http://purl.org/dio/captureMethodology
 
 :captureMethodology rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#contradicts
+###  http://purl.org/dio/contradicts
 
 :contradicts rdf:type owl:ObjectProperty ;
              
@@ -128,7 +128,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#fulfillsRequirement
+###  http://purl.org/dio/fulfillsRequirement
 
 :fulfillsRequirement rdf:type owl:ObjectProperty ;
                      
@@ -141,7 +141,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#governsDesign
+###  http://purl.org/dio/governsDesign
 
 :governsDesign rdf:type owl:ObjectProperty ;
                
@@ -151,7 +151,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasAlternativeSolution
+###  http://purl.org/dio/hasAlternativeSolution
 
 :hasAlternativeSolution rdf:type owl:ObjectProperty ;
                         
@@ -161,7 +161,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasArgument
+###  http://purl.org/dio/hasArgument
 
 :hasArgument rdf:type owl:ObjectProperty ;
              
@@ -171,7 +171,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasConstraint
+###  http://purl.org/dio/hasConstraint
 
 :hasConstraint rdf:type owl:ObjectProperty ;
                
@@ -181,7 +181,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasEvidence
+###  http://purl.org/dio/hasEvidence
 
 :hasEvidence rdf:type owl:ObjectProperty ;
              
@@ -193,7 +193,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasJustification
+###  http://purl.org/dio/hasJustification
 
 :hasJustification rdf:type owl:ObjectProperty ;
                   
@@ -203,7 +203,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasMandatedSolution
+###  http://purl.org/dio/hasMandatedSolution
 
 :hasMandatedSolution rdf:type owl:ObjectProperty ;
                      
@@ -213,7 +213,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#hasStatus
+###  http://purl.org/dio/hasStatus
 
 :hasStatus rdf:type owl:ObjectProperty ;
            
@@ -223,7 +223,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#intentAddresses
+###  http://purl.org/dio/intentAddresses
 
 :intentAddresses rdf:type owl:ObjectProperty ;
                  
@@ -233,7 +233,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#leadsTo
+###  http://purl.org/dio/leadsTo
 
 :leadsTo rdf:type owl:ObjectProperty ;
          
@@ -245,7 +245,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#providesResolutionTo
+###  http://purl.org/dio/providesResolutionTo
 
 :providesResolutionTo rdf:type owl:ObjectProperty ;
                       
@@ -253,7 +253,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#providesSolutionTo
+###  http://purl.org/dio/providesSolutionTo
 
 :providesSolutionTo rdf:type owl:ObjectProperty ;
                     
@@ -261,13 +261,13 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#rationaleCapturedUsing
+###  http://purl.org/dio/rationaleCapturedUsing
 
 :rationaleCapturedUsing rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#refinedInto
+###  http://purl.org/dio/refinedInto
 
 :refinedInto rdf:type owl:ObjectProperty ;
              
@@ -277,7 +277,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#refines
+###  http://purl.org/dio/refines
 
 :refines rdf:type owl:ObjectProperty ;
          
@@ -287,13 +287,13 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#requirementFulfilledBy
+###  http://purl.org/dio/requirementFulfilledBy
 
 :requirementFulfilledBy rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#resolvedUsing
+###  http://purl.org/dio/resolvedUsing
 
 :resolvedUsing rdf:type owl:ObjectProperty ;
                
@@ -303,7 +303,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#supports
+###  http://purl.org/dio/supports
 
 :supports rdf:type owl:ObjectProperty ;
           
@@ -313,7 +313,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#usesAsumption
+###  http://purl.org/dio/usesAsumption
 
 :usesAsumption rdf:type owl:ObjectProperty ;
                
@@ -323,7 +323,7 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#usesHeuristic
+###  http://purl.org/dio/usesHeuristic
 
 :usesHeuristic rdf:type owl:ObjectProperty ;
                
@@ -360,19 +360,19 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 #################################################################
 
 
-###  http://www.aligned.eu/ontologies/dio#createdOn
+###  http://purl.org/dio/createdOn
 
 :createdOn rdf:type owl:DatatypeProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#description
+###  http://purl.org/dio/description
 
 :description rdf:type owl:DatatypeProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#version
+###  http://purl.org/dio/version
 
 :version rdf:type owl:DatatypeProperty .
 
@@ -387,7 +387,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 #################################################################
 
 
-###  http://www.aligned.eu/ontologies/dio#AlternativeSolution
+###  http://purl.org/dio/AlternativeSolution
 
 :AlternativeSolution rdf:type owl:Class ;
                      
@@ -395,7 +395,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Argument
+###  http://purl.org/dio/Argument
 
 :Argument rdf:type owl:Class ;
           
@@ -403,7 +403,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Assumption
+###  http://purl.org/dio/Assumption
 
 :Assumption rdf:type owl:Class ;
             
@@ -411,7 +411,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Constraint
+###  http://purl.org/dio/Constraint
 
 :Constraint rdf:type owl:Class ;
             
@@ -419,13 +419,13 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Design
+###  http://purl.org/dio/Design
 
 :Design rdf:type owl:Class .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignDecision
+###  http://purl.org/dio/DesignDecision
 
 :DesignDecision rdf:type owl:Class ;
                 
@@ -433,7 +433,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignGoal
+###  http://purl.org/dio/DesignGoal
 
 :DesignGoal rdf:type owl:Class ;
             
@@ -444,7 +444,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignIntent
+###  http://purl.org/dio/DesignIntent
 
 :DesignIntent rdf:type owl:Class ;
               
@@ -452,7 +452,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignIntentArtifact
+###  http://purl.org/dio/DesignIntentArtifact
 
 :DesignIntentArtifact rdf:type owl:Class ;
                       
@@ -477,7 +477,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignIssue
+###  http://purl.org/dio/DesignIssue
 
 :DesignIssue rdf:type owl:Class ;
              
@@ -487,7 +487,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignObjective
+###  http://purl.org/dio/DesignObjective
 
 :DesignObjective rdf:type owl:Class ;
                  
@@ -495,7 +495,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignProblem
+###  http://purl.org/dio/DesignProblem
 
 :DesignProblem rdf:type owl:Class ;
                
@@ -503,7 +503,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignQuestion
+###  http://purl.org/dio/DesignQuestion
 
 :DesignQuestion rdf:type owl:Class ;
                 
@@ -511,19 +511,19 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignRationale
+###  http://purl.org/dio/DesignRationale
 
 :DesignRationale rdf:type owl:Class .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#DesignRequirement
+###  http://purl.org/dio/DesignRequirement
 
 :DesignRequirement rdf:type owl:Class .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Evaluation
+###  http://purl.org/dio/Evaluation
 
 :Evaluation rdf:type owl:Class ;
             
@@ -531,7 +531,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Evidence
+###  http://purl.org/dio/Evidence
 
 :Evidence rdf:type owl:Class ;
           
@@ -539,7 +539,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#EvidenceSupportingArtifact
+###  http://purl.org/dio/EvidenceSupportingArtifact
 
 :EvidenceSupportingArtifact rdf:type owl:Class ;
                             
@@ -547,7 +547,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Heuristic
+###  http://purl.org/dio/Heuristic
 
 :Heuristic rdf:type owl:Class ;
            
@@ -555,7 +555,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Justification
+###  http://purl.org/dio/Justification
 
 :Justification rdf:type owl:Class ;
                
@@ -563,7 +563,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#MandatedSolution
+###  http://purl.org/dio/MandatedSolution
 
 :MandatedSolution rdf:type owl:Class ;
                   
@@ -571,13 +571,13 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#RationaleCaptureMethod
+###  http://purl.org/dio/RationaleCaptureMethod
 
 :RationaleCaptureMethod rdf:type owl:Class .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Resolution
+###  http://purl.org/dio/Resolution
 
 :Resolution rdf:type owl:Class ;
             
@@ -585,7 +585,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Solution
+###  http://purl.org/dio/Solution
 
 :Solution rdf:type owl:Class ;
           
@@ -593,7 +593,7 @@ a brief description of the artifact, the version info and the date.""" .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Status
+###  http://purl.org/dio/Status
 
 :Status rdf:type owl:Class .
 
@@ -614,28 +614,28 @@ a brief description of the artifact, the version info and the date.""" .
 #################################################################
 
 
-###  http://www.aligned.eu/ontologies/dio#Active
+###  http://purl.org/dio/Active
 
 :Active rdf:type :Status ,
                  owl:NamedIndividual .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#OnHold
+###  http://purl.org/dio/OnHold
 
 :OnHold rdf:type :Status ,
                  owl:NamedIndividual .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Resolved
+###  http://purl.org/dio/Resolved
 
 :Resolved rdf:type :Status ,
                    owl:NamedIndividual .
 
 
 
-###  http://www.aligned.eu/ontologies/dio#Terminated
+###  http://purl.org/dio/Terminated
 
 :Terminated rdf:type :Status ,
                      owl:NamedIndividual .
