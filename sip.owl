@@ -11,8 +11,6 @@
                            
                            owl:versionInfo "1.0" ;
                            
-                           <http://purl.org/dc/elements/1.1/description> <http://windermere.aston.ac.uk/~solankm2/ontologies/aligned/images/module_imports.jpg> ;
-                           
                            <http://purl.org/dc/elements/1.1/creator> "Monika Solanki" ;
                            
                            <http://purl.org/dc/elements/1.1/rights> "This vocabulary is licensed under a Creative Commons Attribution License - http://creativecommons.org/licenses/by/3.0" ;
@@ -27,8 +25,11 @@ This ontology imports the Software Lifecycle Ontology (SLO) available at http://
                            
                            owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
                                        <http://purl.obolibrary.org/obo/swo.owl> ,
-                                       slo: ,
-                                       <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
+                                       slo: ;
+                           
+                           <http://purl.org/dc/elements/1.1/description> <http://windermere.aston.ac.uk/~solankm2/ontologies/aligned/images/module_imports.jpg> ;
+                           
+                           owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
                                        <http://www.w3.org/ns/prov-o#> .
 
 
@@ -47,6 +48,18 @@ This ontology imports the Software Lifecycle Ontology (SLO) available at http://
 
 ###  http://purl.org/slo/InformationItem
 
+
+
+
+###  http://purl.org/slo/sip/SoftwareQualificationTestingProcess
+
+:SoftwareQualificationTestingProcess rdf:type owl:Class ;
+                                     
+                                     rdfs:label "Software Qualification Testing Process" ;
+                                     
+                                     rdfs:subClassOf <http://www.purl.org/slo/sip/SoftwareImplementationProcess> ;
+                                     
+                                     <http://purl.org/dc/elements/1.1/description> "The purpose of the Software Qualification Testing Process is to confirm that the integrated software product meets its defined requirements." .
 
 
 
