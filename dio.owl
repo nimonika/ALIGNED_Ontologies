@@ -460,7 +460,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
               
               owl:equivalentClass :DesignRationale ;
               
-              dc:description """A concept defining the notion of a design intent, i.e., the rationale underpinning the choices that are made from the alternatives available during various phases of the overall design lifecycle.
+              dc:description """A entity defining the notion of a design intent, i.e., the rationale underpinning the choices that are made from the alternatives available during various phases of the overall design lifecycle.
 """ .
 
 
@@ -468,6 +468,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 ###  http://purl.org/dio/DesignIntentArtifact
 
 :DesignIntentArtifact rdf:type owl:Class ;
+                      
+                      rdfs:label "Design Intent Artifact" ;
                       
                       rdfs:subClassOf [ rdf:type owl:Class ;
                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -485,8 +487,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                                            )
                                       ] ;
                       
-                      dc:description """The minimum ontological commitment required for this entity is the 
-a brief description of the artifact, the version info and the date.""" .
+                      dc:description "An entity representing any artifact that plays a part in capturing the design intent. The minimum ontological commitment required for this entity is the a brief description of the artifact, the version info and the date." .
 
 
 
@@ -592,7 +593,11 @@ a brief description of the artifact, the version info and the date.""" .
 
 :MandatedSolution rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :Solution .
+                  rdfs:label "Mandated solution" ;
+                  
+                  rdfs:subClassOf :Solution ;
+                  
+                  dc:description "An entity representing the solution accepted as a result of the design deliberation process." .
 
 
 
