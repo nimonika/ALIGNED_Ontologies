@@ -421,7 +421,11 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.org/dio/Design
 
-:Design rdf:type owl:Class .
+:Design rdf:type owl:Class ;
+        
+        rdfs:label "Design" ;
+        
+        dc:description "A design is a specification of an object, manifested by an agent, intended to accomplish goals, in a particular environment, using a set of  components, satisfying a set of requirements, subject to constraints." .
 
 
 
@@ -437,10 +441,14 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 :DesignGoal rdf:type owl:Class ;
             
+            rdfs:label "Design goal" ;
+            
             owl:equivalentClass :DesignIssue ,
                                 :DesignProblem ;
             
-            rdfs:subClassOf :DesignIntentArtifact .
+            rdfs:subClassOf :DesignIntentArtifact ;
+            
+            dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
 
 
 
@@ -486,9 +494,13 @@ a brief description of the artifact, the version info and the date.""" .
 
 :DesignIssue rdf:type owl:Class ;
              
+             rdfs:label "Design issue" ;
+             
              owl:equivalentClass :DesignQuestion ;
              
-             rdfs:subClassOf :DesignIntentArtifact .
+             rdfs:subClassOf :DesignIntentArtifact ;
+             
+             dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
 
 
 
@@ -504,7 +516,11 @@ a brief description of the artifact, the version info and the date.""" .
 
 :DesignProblem rdf:type owl:Class ;
                
-               rdfs:subClassOf :DesignIntentArtifact .
+               rdfs:label "Design problem" ;
+               
+               rdfs:subClassOf :DesignIntentArtifact ;
+               
+               dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
 
 
 
@@ -512,7 +528,11 @@ a brief description of the artifact, the version info and the date.""" .
 
 :DesignQuestion rdf:type owl:Class ;
                 
-                rdfs:subClassOf :DesignIntentArtifact .
+                rdfs:label "Design question" ;
+                
+                rdfs:subClassOf :DesignIntentArtifact ;
+                
+                dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
 
 
 
