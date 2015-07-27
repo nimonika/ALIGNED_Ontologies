@@ -182,6 +182,14 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 
+###  http://purl.org/dio/hasDesignIntentArtifact
+
+:hasDesignIntentArtifact rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
 ###  http://purl.org/dio/hasEvidence
 
 :hasEvidence rdf:type owl:ObjectProperty ;
@@ -600,7 +608,11 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                   
                   rdfs:label "Mandated solution" ;
                   
-                  rdfs:subClassOf :Solution ;
+                  rdfs:subClassOf :Solution ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasDesignIntentArtifact ;
+                                    owl:someValuesFrom :DesignIntentArtifact
+                                  ] ;
                   
                   dc:description "An entity representing the solution accepted as a result of the design deliberation process." .
 
