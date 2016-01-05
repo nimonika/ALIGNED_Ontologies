@@ -5,27 +5,27 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://purl.org/dio/> .
+@base <http://aligned.cs.ox.ac.uk/ontologies/dio#> .
 
-<http://purl.org/dio/> rdf:type owl:Ontology ;
-                       
-                       owl:versionInfo 1.0 ;
-                       
-                       dc:date "25-06-2015" ;
-                       
-                       dc:title "The Design Intent Ontology" ;
-                       
-                       dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
-                       
-                       dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
-                       
-                       dc:description "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
-                       
-                       owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ;
-                       
-                       dc:description <http://windermere.aston.ac.uk/~solankm2/ontologies/aligned/images/dio.jpg> ;
-                       
-                       owl:imports <http://www.w3.org/ns/prov-o-20130430> .
+<http://aligned.cs.ox.ac.uk/ontologies/dio#> rdf:type owl:Ontology ;
+                                             
+                                             owl:versionInfo 1.0 ;
+                                             
+                                             dc:date "25-06-2015" ;
+                                             
+                                             dc:title "The Design Intent Ontology" ;
+                                             
+                                             dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
+                                             
+                                             dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
+                                             
+                                             dc:description "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
+                                             
+                                             owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ;
+                                             
+                                             dc:description <http://windermere.aston.ac.uk/~solankm2/ontologies/aligned/images/dio.jpg> ;
+                                             
+                                             owl:imports <http://www.w3.org/ns/prov-o-20130430> .
 
 
 #################################################################
