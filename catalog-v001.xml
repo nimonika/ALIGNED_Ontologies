@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://provmodules/dio_prov.owl" uri="prov_dio.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.ebi.ac.uk/swo/swo.owl" uri="http://purl.obolibrary.org/obo/swo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-20130430" uri="http://www.w3.org/ns/prov-o"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="http://aligned.cs.ox.ac.uk/ontologies/prov_dio.owl" uri="prov_dio.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="http://www.semanticweb.org/msolank/ontologies/2015/8/untitled-ontology-22" uri="Appliances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="http://www.semanticweb.org/msolank/ontologies/2015/8/untitled-ontology-27" uri="Car_ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="http://www.semanticweb.org/msolank/ontologies/2016/0/untitled-ontology-49" uri="test_prov.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="duplicate:http://www.w3.org/ns/prov" uri="dio_v1.2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1452250663504" name="duplicate:http://www.w3.org/ns/prov" uri="prov-o.owl"/>
+    </group>
+</catalog>

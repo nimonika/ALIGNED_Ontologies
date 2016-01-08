@@ -1,0 +1,694 @@
+@prefix : <http://purl.org/dio/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://aligned.cs.ox.ac.uk/ontologies/dio#> .
+
+<http://aligned.cs.ox.ac.uk/ontologies/dio#> rdf:type owl:Ontology ;
+                                             
+                                             owl:versionInfo 1.0 ;
+                                             
+                                             dc:date "25-06-2015" ;
+                                             
+                                             dc:title "The Design Intent Ontology" ;
+                                             
+                                             dc:description "A design intent or design rationale is an explicit documentation of the reasons behind decisions made when designing a system or artifact." ;
+                                             
+                                             dc:creator "Monika Solanki (monika.solanki@cs.ox.ac.uk)"@en ;
+                                             
+                                             dc:description "The scope of the ontology is the domain of desgin intent or design rationale that needs to be documented while undertaking the desgin of any artifact." ;
+                                             
+                                             owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ;
+                                             
+                                             dc:description <http://windermere.aston.ac.uk/~solankm2/ontologies/aligned/images/dio.jpg> ;
+                                             
+                                             owl:imports <http://www.w3.org/ns/prov-o-20130430> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/creator
+
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/date
+
+dc:date rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/description
+
+dc:description rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/language
+
+dc:language rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/title
+
+dc:title rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral
+
+rdf:PlainLiteral rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#dateTime
+
+xsd:dateTime rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#string
+
+xsd:string rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/dio/addressedBy
+
+:addressedBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dio/captureMethodology
+
+:captureMethodology rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dio/contradicts
+
+:contradicts rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :Solution ;
+             
+             rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/fulfillsRequirement
+
+:fulfillsRequirement rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :Design ,
+                                 :DesignIntentArtifact ;
+                     
+                     rdfs:range :DesignRequirement ;
+                     
+                     owl:inverseOf :requirementFulfilledBy .
+
+
+
+###  http://purl.org/dio/governsDesign
+
+:governsDesign rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Design ;
+               
+               rdfs:domain :DesignDecision .
+
+
+
+###  http://purl.org/dio/hasAlternativeSolution
+
+:hasAlternativeSolution rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range :AlternativeSolution ;
+                        
+                        rdfs:domain :DesignIssue .
+
+
+
+###  http://purl.org/dio/hasArgument
+
+:hasArgument rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :Argument ;
+             
+             rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/hasConstraint
+
+:hasConstraint rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Constraint ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/hasDesignIntentArtifact
+
+:hasDesignIntentArtifact rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/dio/hasEvidence
+
+:hasEvidence rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Argument ;
+             
+             rdfs:range :Evidence ;
+             
+             rdfs:domain :Justification .
+
+
+
+###  http://purl.org/dio/hasJustification
+
+:hasJustification rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Justification ;
+                  
+                  rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/hasMandatedSolution
+
+:hasMandatedSolution rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :DesignIssue ;
+                     
+                     rdfs:range :MandatedSolution .
+
+
+
+###  http://purl.org/dio/hasStatus
+
+:hasStatus rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :DesignIssue ;
+           
+           rdfs:range :Status .
+
+
+
+###  http://purl.org/dio/intentAddresses
+
+:intentAddresses rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range :DesignGoal ;
+                 
+                 rdfs:domain :DesignIntent .
+
+
+
+###  http://purl.org/dio/leadsTo
+
+:leadsTo rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :DesignDecision ;
+         
+         rdfs:domain :MandatedSolution ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/dio/providesResolutionTo
+
+:providesResolutionTo rdf:type owl:ObjectProperty ;
+                      
+                      owl:inverseOf :resolvedUsing .
+
+
+
+###  http://purl.org/dio/providesSolutionTo
+
+:providesSolutionTo rdf:type owl:ObjectProperty ;
+                    
+                    owl:inverseOf :hasMandatedSolution .
+
+
+
+###  http://purl.org/dio/rationaleCapturedUsing
+
+:rationaleCapturedUsing rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dio/refinedInto
+
+:refinedInto rdf:type owl:ObjectProperty ;
+             
+             rdfs:range :DesignRequirement ;
+             
+             rdfs:domain :DesignRequirement .
+
+
+
+###  http://purl.org/dio/refines
+
+:refines rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Solution ;
+         
+         rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/requirementFulfilledBy
+
+:requirementFulfilledBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dio/resolvedUsing
+
+:resolvedUsing rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Argument ;
+               
+               rdfs:range :Resolution .
+
+
+
+###  http://purl.org/dio/supports
+
+:supports rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Justification ;
+          
+          rdfs:domain <http://www.w3.org/ns/prov#Agent> .
+
+
+
+###  http://purl.org/dio/usesAsumption
+
+:usesAsumption rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Assumption ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://purl.org/dio/usesHeuristic
+
+:usesHeuristic rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Heuristic ;
+               
+               rdfs:domain :Solution .
+
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+
+<http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:domain :Argument ,
+                                                        :Assumption ,
+                                                        :Evidence ,
+                                                        :Heuristic ,
+                                                        :Justification .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://purl.org/dio/createdOn
+
+:createdOn rdf:type owl:DatatypeProperty .
+
+
+
+###  http://purl.org/dio/description
+
+:description rdf:type owl:DatatypeProperty .
+
+
+
+###  http://purl.org/dio/version
+
+:version rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://purl.org/dio/AlternativeSolution
+
+:AlternativeSolution rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Solution .
+
+
+
+###  http://purl.org/dio/Argument
+
+:Argument rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Assumption
+
+:Assumption rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Constraint
+
+:Constraint rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Design
+
+:Design rdf:type owl:Class ;
+        
+        rdfs:label "Design" ;
+        
+        dc:description "A design is a specification of an object, manifested by an agent, intended to accomplish goals, in a particular environment, using a set of  components, satisfying a set of requirements, subject to constraints." .
+
+
+
+###  http://purl.org/dio/DesignDecision
+
+:DesignDecision rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/DesignGoal
+
+:DesignGoal rdf:type owl:Class ;
+            
+            rdfs:label "Design goal" ;
+            
+            owl:equivalentClass :DesignIssue ,
+                                :DesignProblem ;
+            
+            rdfs:subClassOf :DesignIntentArtifact ;
+            
+            dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
+
+
+
+###  http://purl.org/dio/DesignIntent
+
+:DesignIntent rdf:type owl:Class ;
+              
+              rdfs:label "Design Intent" ;
+              
+              owl:equivalentClass :DesignRationale ;
+              
+              dc:description """A entity defining the notion of a design intent, i.e., the rationale underpinning the choices that are made from the alternatives available during various phases of the overall design lifecycle.
+""" .
+
+
+
+###  http://purl.org/dio/DesignIntentArtifact
+
+:DesignIntentArtifact rdf:type owl:Class ;
+                      
+                      rdfs:label "Design Intent Artifact" ;
+                      
+                      rdfs:subClassOf [ rdf:type owl:Class ;
+                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :description ;
+                                                               owl:someValuesFrom xsd:string
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :version ;
+                                                               owl:someValuesFrom xsd:string
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.w3.org/ns/prov#generatedAtTime> ;
+                                                               owl:someValuesFrom xsd:dateTime
+                                                             ]
+                                                           )
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                                        owl:someValuesFrom <http://www.w3.org/ns/prov#Agent>
+                                      ] ;
+                      
+                      dc:description "An entity representing any artifact that plays a part in capturing the design intent. The minimum ontological commitment required for this entity is the a brief description of the artifact, the version info and the date." .
+
+
+
+###  http://purl.org/dio/DesignIssue
+
+:DesignIssue rdf:type owl:Class ;
+             
+             rdfs:label "Design issue" ;
+             
+             owl:equivalentClass :DesignQuestion ;
+             
+             rdfs:subClassOf :DesignIntentArtifact ;
+             
+             dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
+
+
+
+###  http://purl.org/dio/DesignObjective
+
+:DesignObjective rdf:type owl:Class ;
+                 
+                 owl:equivalentClass :DesignRequirement .
+
+
+
+###  http://purl.org/dio/DesignProblem
+
+:DesignProblem rdf:type owl:Class ;
+               
+               rdfs:label "Design problem" ;
+               
+               rdfs:subClassOf :DesignIntentArtifact ;
+               
+               dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
+
+
+
+###  http://purl.org/dio/DesignQuestion
+
+:DesignQuestion rdf:type owl:Class ;
+                
+                rdfs:label "Design question" ;
+                
+                rdfs:subClassOf :DesignIntentArtifact ;
+                
+                dc:description "An entity representing the problem, goal, question or issue the design intent aims to address." .
+
+
+
+###  http://purl.org/dio/DesignRationale
+
+:DesignRationale rdf:type owl:Class .
+
+
+
+###  http://purl.org/dio/DesignRequirement
+
+:DesignRequirement rdf:type owl:Class .
+
+
+
+###  http://purl.org/dio/Evaluation
+
+:Evaluation rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Evidence
+
+:Evidence rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/EvidenceSupportingArtifact
+
+:EvidenceSupportingArtifact rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :Evidence .
+
+
+
+###  http://purl.org/dio/Heuristic
+
+:Heuristic rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Justification
+
+:Justification rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/MandatedSolution
+
+:MandatedSolution rdf:type owl:Class ;
+                  
+                  rdfs:label "Mandated solution" ;
+                  
+                  rdfs:subClassOf :Solution ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasDesignIntentArtifact ;
+                                    owl:someValuesFrom :DesignIntentArtifact
+                                  ] ;
+                  
+                  dc:description "An entity representing the solution accepted as a result of the design deliberation process." .
+
+
+
+###  http://purl.org/dio/RationaleCaptureMethod
+
+:RationaleCaptureMethod rdf:type owl:Class .
+
+
+
+###  http://purl.org/dio/Resolution
+
+:Resolution rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Solution
+
+:Solution rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesignIntentArtifact .
+
+
+
+###  http://purl.org/dio/Status
+
+:Status rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/ns/prov#Agent
+
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://purl.org/dio/Active
+
+:Active rdf:type :Status ,
+                 owl:NamedIndividual .
+
+
+
+###  http://purl.org/dio/OnHold
+
+:OnHold rdf:type :Status ,
+                 owl:NamedIndividual .
+
+
+
+###  http://purl.org/dio/Resolved
+
+:Resolved rdf:type :Status ,
+                   owl:NamedIndividual .
+
+
+
+###  http://purl.org/dio/Terminated
+
+:Terminated rdf:type :Status ,
+                     owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

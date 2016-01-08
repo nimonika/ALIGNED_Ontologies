@@ -1,0 +1,218 @@
+@prefix : <https://w3id.org/diopp#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/diopp> .
+
+<https://w3id.org/diopp> rdf:type owl:Ontology ;
+                         
+                         dc:date "24-11-2015" ;
+                         
+                         dc:title "The Pool Party Design Intent Ontology" ;
+                         
+                         rdfs:comment "This ontology covers the PoolParty conceptualisation to be used with the DIO ontology" ;
+                         
+                         dc:creator "Monika Solanki" ;
+                         
+                         owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
+                                     dc: ;
+                         
+                         owl:versionIRI <https://w3id.org/diopp/1.0.0> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  https://w3id.org/diopp#belongsTo
+
+:belongsTo rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasAffectedComponent
+
+:hasAffectedComponent rdf:type owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasAssignee
+
+:hasAssignee rdf:type owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasReporter
+
+:hasReporter rdf:type owl:FunctionalProperty ,
+                      owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasResolutionType
+
+:hasResolutionType rdf:type owl:FunctionalProperty ,
+                            owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasVersionType
+
+:hasVersionType rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty .
+
+
+
+###  https://w3id.org/diopp#hasWatcher
+
+:hasWatcher rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  https://w3id.org/diopp#estimatedTimeEffort
+
+:estimatedTimeEffort rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty .
+
+
+
+###  https://w3id.org/diopp#hasDueDate
+
+:hasDueDate rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:range xsd:dateTime .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  https://w3id.org/diopp#Component
+
+:Component rdf:type owl:Class ;
+           
+           rdfs:comment "The componet whch is affected by a design issue." .
+
+
+
+###  https://w3id.org/diopp#DevelopmentSpace
+
+:DevelopmentSpace rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :PoolPartySpace .
+
+
+
+###  https://w3id.org/diopp#IdeaSpace
+
+:IdeaSpace rdf:type owl:Class ;
+           
+           rdfs:subClassOf :PoolPartySpace .
+
+
+
+###  https://w3id.org/diopp#IssueType
+
+:IssueType rdf:type owl:Class ;
+           
+           rdfs:comment "An entity representing the type of an issue." .
+
+
+
+###  https://w3id.org/diopp#PoolPartyDesignIssue
+
+:PoolPartyDesignIssue rdf:type owl:Class ;
+                      
+                      rdfs:comment "An entity representing the design issues recorded for a Pool Party instantiation." .
+
+
+
+###  https://w3id.org/diopp#PoolPartySpace
+
+:PoolPartySpace rdf:type owl:Class ;
+                
+                rdfs:comment "An abstract space that encapsulates concrete spaces within the Pool Party environment" .
+
+
+
+###  https://w3id.org/diopp#ProjectSpace
+
+:ProjectSpace rdf:type owl:Class ;
+              
+              rdfs:subClassOf :PoolPartySpace .
+
+
+
+###  https://w3id.org/diopp#ResolutionType
+
+:ResolutionType rdf:type owl:Class ;
+                
+                rdfs:comment "An entity representing the resolution type for an issue." .
+
+
+
+###  https://w3id.org/diopp#SupportSpace
+
+:SupportSpace rdf:type owl:Class ;
+              
+              rdfs:subClassOf :PoolPartySpace .
+
+
+
+###  https://w3id.org/diopp#VersionType
+
+:VersionType rdf:type owl:Class ;
+             
+             rdfs:comment "An entity denoting the version type of a design issue" .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  https://w3id.org/diopp#story
+
+:story rdf:type owl:NamedIndividual ,
+                :IssueType .
+
+
+
+###  https://w3id.org/diopp#unresolved
+
+:unresolved rdf:type owl:NamedIndividual ,
+                     :ResolutionType .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

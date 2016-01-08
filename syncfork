@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# != 2 ];
+	then echo "SYNOPSYS: syncfork [fork] [main]"
+fi
+git fetch $2
+git rebase $2/$1
+git push origin $1
