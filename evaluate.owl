@@ -1,0 +1,240 @@
+@prefix aveo: <https://w3id.org/aevo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <<http://purl.org/dc/elements/1.1/> .
+
+
+<https://w3id.org/aevo/> a owl:Ontology ;
+	dc:creator "Monika Solanki" ;
+	dcterms:created "06-06-2017"^^xsd:date ;
+	dcterms:title "ALIGNED Evaluation and Validation Ontology"@en ;
+	dcterms:description "The ontology defines the concepts and relationships needed to capture the evaluation metrics and measurement techniques for evaluating software and data artefacts"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/description
+
+<http://purl.org/dc/elements/1.1/description> a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aevo/evaluatedUsingMetric
+
+<https://w3id.org/aevo/evaluatedUsingMetric> a owl:ObjectProperty ;
+	rdfs:domain <https://w3id.org/aevo/ArtefactUnderEvaluation> ;
+	rdfs:range <https://w3id.org/aevo/Metric> ;
+	rdfs:isDefinedBy "https://w3id.org/aveo" ;
+	rdfs:label "evaluatedUsingMetric"@en .
+# 
+# https://w3id.org/aevo/metricMeasuredUsingMeasurement
+
+<https://w3id.org/aevo/metricMeasuredUsingMeasurement> a owl:ObjectProperty ;
+	rdfs:domain <https://w3id.org/aevo/Metric> ;
+	rdfs:range <https://w3id.org/aevo/MetricMeasurement> ;
+	rdfs:isDefinedBy "https://w3id.org/aveo" ;
+	rdfs:label "metricMeasuredUsingMeasurement"@en .
+# 
+# https://w3id.org/aevo/usesEvaluationMethodology
+
+<https://w3id.org/aevo/usesEvaluationMethodology> a owl:ObjectProperty ;
+	rdfs:isDefinedBy "https://w3id.org/aveo" ;
+	rdfs:label "usesEvaluationMethodology"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aevo/measurementUnit
+
+<https://w3id.org/aevo/measurementUnit> a owl:DatatypeProperty ;
+	rdfs:domain <https://w3id.org/aevo/MetricMeasurement> ;
+	rdfs:isDefinedBy "https://w3id.org/aveo"@en ;
+	rdfs:label "measurementUnit"@en .
+# 
+# https://w3id.org/aevo/measurementValue
+
+<https://w3id.org/aevo/measurementValue> a owl:DatatypeProperty ;
+	rdfs:domain <https://w3id.org/aevo/MetricMeasurement> ;
+	rdfs:isDefinedBy "https://w3id.org/aveo" ;
+	rdfs:label "measurementValue"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aevo/AgilityMetric
+
+<https://w3id.org/aevo/AgilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/Metric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the agility feature of an artefact"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "AgilityMetric"@en .
+# 
+# https://w3id.org/aevo/ArtefactUnderEvaluation
+
+<https://w3id.org/aevo/ArtefactUnderEvaluation> a owl:Class ;
+	<http://purl.org/dc/elements/1.1/description> "The artefact to be evaluated"@en ;
+	rdfs:isDefinedBy "https://w3id.org/aveo"@en ;
+	rdfs:label "ArtefactUnderEvaluation"@en .
+# 
+# https://w3id.org/aevo/BaselineMethodology
+
+<https://w3id.org/aevo/BaselineMethodology> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/EvaluationMethodology> ;
+	<http://purl.org/dc/elements/1.1/description> "The baseline methodology for evaluated an artefact"@en ;
+	rdfs:isDefinedBy "https://w3id.org/aveo" ;
+	rdfs:label "BaselineMethodology"@en .
+# 
+# https://w3id.org/aevo/DataAgilityMetric
+
+<https://w3id.org/aevo/DataAgilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/AgilityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the agility feature of data"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "DataAgilityMetric"@en .
+# 
+# https://w3id.org/aevo/DataProductivityMetric
+
+<https://w3id.org/aevo/DataProductivityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/ProductivityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the productivity feature for data"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "DataProductivityMetric"@en .
+# 
+# https://w3id.org/aevo/DataQualityMetric
+
+<https://w3id.org/aevo/DataQualityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/QualityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the quality of data"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "DataQualityMetric"@en .
+# 
+# https://w3id.org/aevo/DataUsabilityMetric
+
+<https://w3id.org/aevo/DataUsabilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/UsabilityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the usability of data"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "DataUsabilityMetric"@en .
+# 
+# https://w3id.org/aevo/DatasetUnderEvaluation
+
+<https://w3id.org/aevo/DatasetUnderEvaluation> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/ArtefactUnderEvaluation> ;
+	<http://purl.org/dc/elements/1.1/description> "The dataset under evaluation"@en ;
+	rdfs:isDefinedBy "https://w3id.org/aveo"@en ;
+	rdfs:label "DatasetUnderEvaluation"@en .
+# 
+# https://w3id.org/aevo/EvaluationMethodology
+
+<https://w3id.org/aevo/EvaluationMethodology> a owl:Class ;
+	<http://purl.org/dc/elements/1.1/description> "The evaluation Methodology for an artefact under evaluation"@en ;
+	rdfs:isDefinedBy "https://w3id.org/aveo"@en ;
+	rdfs:label "EvaluationMethodology"@en .
+# 
+# https://w3id.org/aevo/Metric
+
+<https://w3id.org/aevo/Metric> a owl:Class ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of some property of a piece of software or its specifications"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "Metric"@en .
+# 
+# https://w3id.org/aevo/MetricMeasurement
+
+<https://w3id.org/aevo/MetricMeasurement> a owl:Class ;
+	<http://purl.org/dc/elements/1.1/description> "The measurement criteria for a metric"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "MetricMeasurement"@en .
+# 
+# https://w3id.org/aevo/ProductivityMetric
+
+<https://w3id.org/aevo/ProductivityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/Metric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the productivity of an artefact"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "ProductivityMetric"@en .
+# 
+# https://w3id.org/aevo/QualityMetric
+
+<https://w3id.org/aevo/QualityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/Metric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the quality of an artefact"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "QualityMetric"@en .
+# 
+# https://w3id.org/aevo/SoftwareAgilityMetric
+
+<https://w3id.org/aevo/SoftwareAgilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/AgilityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the agility feature of a piece of software"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "SoftwareAgilityMetric"@en .
+# 
+# https://w3id.org/aevo/SoftwareProductivityMetric
+
+<https://w3id.org/aevo/SoftwareProductivityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/ProductivityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the productivity of a piece of software"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "SoftwareProductivityMetric"@en .
+# 
+# https://w3id.org/aevo/SoftwareQualityMetric
+
+<https://w3id.org/aevo/SoftwareQualityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/QualityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the quality of a piece of software"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "SoftwareQualityMetric"@en .
+# 
+# https://w3id.org/aevo/SoftwareUnderEvaluation
+
+<https://w3id.org/aevo/SoftwareUnderEvaluation> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/ArtefactUnderEvaluation> ;
+	<http://purl.org/dc/elements/1.1/description> "The software under evaluation"@en ;
+	rdfs:isDefinedBy "https://w3id.org/aveo"@en ;
+	rdfs:label "SoftwareUnderEvaluation"@en .
+# 
+# https://w3id.org/aevo/SoftwareUsabilityMetric
+
+<https://w3id.org/aevo/SoftwareUsabilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/UsabilityMetric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the usability feature of a piece of software"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "SoftwareUsabilityMetric"@en .
+# 
+# https://w3id.org/aevo/UsabilityMetric
+
+<https://w3id.org/aevo/UsabilityMetric> a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/aevo/Metric> ;
+	<http://purl.org/dc/elements/1.1/description> "A measure of the usability feature of an artefact"@en ;
+	rdfs:isDefinedBy "http://w3id.org/aveo" ;
+	rdfs:label "UsabilityMetric"@en .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
